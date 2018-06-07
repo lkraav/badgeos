@@ -1,0 +1,8 @@
+{
+    "name": "plugins/badgeos",
+    "type": "wordpress-plugin",
+    "scripts": {
+        "deploy": "dep deploy --hosts=conversionxl.com -o application=$(composer config name)",
+        "rollback": "dep rollback --hosts=conversionxl.com -o application=$(composer config name)"
+    }
+}
