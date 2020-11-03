@@ -625,25 +625,6 @@ function badgeos_get_achievement_post_thumbnail( $post_id = 0, $image_size = 'ba
 }
 
 /**
- * Attempt to send an achievement to Credly if the user has send enabled
- *
- * @since 1.0.0
- *
- * @param int $user_id        The ID of the user earning the achievement
- * @param int $achievement_id The ID of the achievement being earned
- */
-function credly_issue_badge( $user_id, $achievement_id ) {
-
-	if ( 'true' === $GLOBALS['badgeos_credly']->user_enabled ) {
-
-		$GLOBALS['badgeos_credly']->post_credly_user_badge( $user_id, $achievement_id );
-
-	}
-
-}
-add_action( 'badgeos_award_achievement', 'credly_issue_badge', 10, 2 );
-
-/**
  * Get an array of all users who have earned a given achievement
  *
  * @since  1.1.0
